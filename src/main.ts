@@ -8,7 +8,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
-    .setTitle('Users')
+    .setTitle('User')
     .setDescription('My shopping list API description')
     .setVersion('1.0')
     .addTag('app')
@@ -18,12 +18,12 @@ async function bootstrap() {
     )
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('appiusDoc', app, document);
+  SwaggerModule.setup('nodetesting', app, document);
 
   app.useGlobalPipes(
     new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }),
   );
 
-  await app.listen(3000);
+  await app.listen(5000);
 }
 bootstrap();
